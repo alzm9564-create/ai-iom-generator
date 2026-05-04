@@ -2,6 +2,22 @@
 
 This is a web-based tool that generates engineering IOM documents using AI.
 
+## Demo
+
+![demo](docs/demo.gif)
+
+## Live Demo
+Coming soon (deploying)
+
+## What it does
+- Generate structured IOM documents from inputs
+- Store history (SQLite)
+- Delete records
+- Download as .txt
+
+## Why this project
+Built to demonstrate AI integration into manufacturing workflows (IOM automation).
+
 ## Features
 - Generate structured engineering documents
 - Store history in database
