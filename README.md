@@ -34,7 +34,7 @@ Built to demonstrate AI integration into manufacturing workflows (IOM automation
 1. Install dependencies :
    pip install -r requirements.txt
 
-2. Set OpenAI API key.
+2. Set your OpenAI API key :
    OPENAI_API_KEY=your_api_key
 
 3. Run :
