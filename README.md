@@ -31,16 +31,16 @@ Built to demonstrate AI integration into manufacturing workflows (IOM automation
 
 ## How to Run
 
-1. Install dependencies
+1. Install dependencies :
    pip install -r requirements.txt
 
-2. Set API key
-   set OPENAI_API_KEY=your_api_key
+2. Set OpenAI API key.
+   OPENAI_API_KEY=your_api_key
 
-3. Run
+3. Run :
    python app.py
 
-4. Open browser
+4. Open browser :
    http://127.0.0.1:5000
 
 ## Project Structure
