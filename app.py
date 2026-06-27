@@ -6,14 +6,6 @@ import os
 
 app = Flask(__name__)
 
-api_key = os.getenv("OPENAI_API_KEY")
-
-if not api_key:
-    raise ValueError("請先設定 OPENAI_API_KEY")
-
-client = OpenAI(api_key=api_key)
-
-
 def init_db():
     conn = sqlite3.connect("iom.db")
 
@@ -34,7 +26,7 @@ def init_db():
     conn.close()
 
 
-def generate_doc(product, spec, usage):
+def generate_doc(client, product, spec, usage):
 
     prompt = f"""
 你是一位資深機械工程師，請撰寫正式工程文件（IOM），需符合工業文件標準。
@@ -88,13 +80,14 @@ def index():
     result = ""
 
     if request.method == "POST":
-        print(">>> POST觸發測試")
+        api_key = request.form["api_key"]
+        client = OpenAI(api_key=api_key)
 
         product = request.form["product"]
         spec = request.form["spec"]
         usage = request.form["usage"]
 
-        result = generate_doc(product, spec, usage)
+        result = generate_doc(client, product, spec, usage)
 
         conn = sqlite3.connect("iom.db")
         cursor = conn.cursor()
@@ -169,4 +162,4 @@ def download(id):
 if __name__ == "__main__":
     init_db()
 
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

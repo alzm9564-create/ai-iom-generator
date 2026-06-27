@@ -16,6 +16,12 @@
         <form method="POST">
 
             <div class="mb-3">
+                <label class="form-label">OpenAI API Key</label>
+                <input type="password" name="api_key" class="form-control" placeholder="貼上你的 OpenAI API Key（sk-...）">
+                <div class="form-text text-muted">你的 Key 不會被儲存，僅用於本次生成</div>
+            </div>
+
+            <div class="mb-3">
                 <label class="form-label">產品名稱</label>
                 <input name="product" class="form-control" placeholder="例如：工業馬達">
             </div>
